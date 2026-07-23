@@ -1,0 +1,10 @@
+defaults:
+  - base
+  - _self_
+
+MODEL:
+  CROPR_SCHEDULE: "progressive_tokens"
+  CROPR_STATIC_PRUNING: false
+
+TRAIN:
+  EXPERIMENT_ID: qBC_vits_per_block

@@ -1,0 +1,5 @@
+# Geometric 3-stage [2,5,8]@0.70 hard-route + CROPR scorer — identical to the
+# Question A `aux_route_penultimate` arm, so it aliases it rather than redefining.
+defaults:
+  - ../../question_A/core/aux_route_penultimate
+  - _self_

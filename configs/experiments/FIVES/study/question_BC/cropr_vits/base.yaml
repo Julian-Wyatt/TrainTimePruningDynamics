@@ -1,0 +1,30 @@
+# ViT-S CROPR schedule family for Question B/C. base_1024_50 supplies the
+# (ViT-B) EoMT model config; the BACKBONE override below makes it ViT-S.
+defaults:
+  - ../../shared/base_1024_50
+  - _self_
+
+TRAIN:
+  TRAINER_TYPE: "auto"
+  LOSS_TYPE: "mask2former"
+  BATCH_SIZE: 2
+  EFFECTIVE_BATCH_SIZE: 8
+
+MODEL:
+  BACKBONE: "vit_small_patch16_dinov3.lvd1689m"
+  EMA_DECAY: 0.999
+  USE_CROPR: true
+  USE_EOMT_PRUNING: true
+  EOMT_PRUNE_TRAIN_MODE: "hard_route"
+  EOMT_PRUNE_EVAL_MODE: "hard"
+  EOMT_PRUNE_REINJECT: "penultimate"
+  # CROPR's ViT-L @512x512 budget (40 tokens/block over 22 pruned blocks), depth-
+  # adjusted to ViT-S's 10: 40*22/10 = 88 per 1024 tokens, i.e. 352 at 1024x1024.
+  CROPR_PRUNING_RATE: 88
+  CROPR_DERIVE_PRUNING_RATE: true
+  CROPR_REFERENCE_PRUNE_TOKENS: 88
+  CROPR_REFERENCE_SPATIAL_TOKENS: 1024
+  CROPR_KEEP_FRACTION: 0.7
+  PRUNE_ROUND_MULTIPLE: 8
+  ROUTING_START: 2
+  ROUTING_END: -1

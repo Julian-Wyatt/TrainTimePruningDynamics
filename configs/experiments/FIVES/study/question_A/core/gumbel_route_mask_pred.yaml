@@ -1,0 +1,10 @@
+defaults:
+  - gumbel_route_qstart
+  - _self_
+
+MODEL:
+  EOMT_PRUNE_REINJECT: "mask_pred"
+
+TRAIN:
+  # Own id — must override the one inherited from gumbel_route_qstart.
+  EXPERIMENT_ID: qA_gumbel_maskpred

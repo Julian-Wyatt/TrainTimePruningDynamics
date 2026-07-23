@@ -1,0 +1,16 @@
+defaults:
+  - random_route
+  - _self_
+
+MODEL:
+  # Paper Table 1, "Random (eval-only)": reuse the random_route checkpoints but
+  # discard the learned selector at eval, pruning randomly to the same budget.
+  EOMT_PRUNE_EVAL_MODE: "random"
+  EOMT_PRUNE_RANDOM_RATIO: 1.0
+  # random_route rejects the -1.0 "use KEEP_RATES" sentinel, so state the uniform
+  # per-stage budget (== KEEP_RATES) that "random" eval substitutes in.
+  EOMT_PRUNE_ROUTING_KEEP_RATE: 0.7
+
+TRAIN:
+  EXPERIMENT_ID: qA_random_eval_rr
+  RESULTS_GROUP: qA_core

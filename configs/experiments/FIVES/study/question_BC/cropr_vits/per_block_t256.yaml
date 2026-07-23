@@ -1,0 +1,12 @@
+defaults:
+  - per_block
+  - _self_
+
+MODEL:
+  CROPR_DERIVE_PRUNING_RATE: false
+  CROPR_PRUNING_RATE: 256
+
+TRAIN:
+  # Distinct identity: parent per_block hardcodes EXPERIMENT_ID=qBC_vits_per_block,
+  # which all budget variants would otherwise inherit and collide on.
+  EXPERIMENT_ID: qBC_vits_per_block_t256

@@ -1,0 +1,12 @@
+defaults:
+  - ../../shared/base_1024_50_vits
+  - _self_
+
+MODEL:
+  USE_EOMT_PRUNING: false
+
+TRAIN:
+  # Results-table identity (== W&B run group). Set explicitly so the Question B/C
+  # `cropr_vits/dense` alias inherits it and the registry treats them as one run.
+  EXPERIMENT_ID: qA_dense_vits
+  RESULTS_GROUP: qA_core

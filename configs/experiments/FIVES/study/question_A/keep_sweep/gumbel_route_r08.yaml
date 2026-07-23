@@ -1,0 +1,12 @@
+defaults:
+  - ../core/gumbel_route_penultimate
+  - _self_
+
+MODEL:
+  EOMT_KEEP_RATES: [0.8, 0.8, 0.8]
+
+TRAIN:
+  # Distinct per-rate id so the keep-rate axis isn't collapsed in the registry
+  # (all leaves would otherwise inherit qA_gumbel_penult from the core parent).
+  EXPERIMENT_ID: qA_gumbel_penult_r08
+  RESULTS_GROUP: qA_keep_sweep

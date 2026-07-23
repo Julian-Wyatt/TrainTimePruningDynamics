@@ -1,0 +1,2 @@
+keep,throughput,throughput_sd,cldice,cldice_sd,miou,miou_sd,thin_recall,thin_recall_sd,boundary_iou,boundary_iou_sd
+1.0,324.198,2.4622,0.93107,0.00003,0.85818,0.00017,0.90325,0.00032,0.83480,0.00027

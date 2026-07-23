@@ -1,0 +1,332 @@
+{
+  "style_version": "v4_input-left_soft-alpha-0.60_prune-cool-overlay-alpha-0.90-transparent-kept",
+  "style": {
+    "image_column_position": "start",
+    "soft_panel": "overlay",
+    "softmax_cmap": "magma",
+    "soft_alpha": 0.6,
+    "dense_separator_extra_pad": 27,
+    "prune_cmap": "cool",
+    "prune_frequency_alpha": 0.9,
+    "prune_transparent_never_pruned": true,
+    "prune_never_pruned_threshold": 0.999,
+    "prune_frequency_rows": 2
+  },
+  "column_order": {
+    "seg_soft": [
+      "input image",
+      "ground truth",
+      "Dense",
+      "Soft Mask",
+      "Random_route",
+      "Gumbel_penulti",
+      "aux_route_penultimate"
+    ],
+    "prune_frequency": [
+      "input image",
+      "Soft Mask",
+      "Gumbel_penulti",
+      "aux_route_penultimate"
+    ]
+  },
+  "checkpoint_order": [
+    {
+      "name": "Dense",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/checkpoints/26/06/16-08:27:07-hgkmb/best_epoch50.pt"
+    },
+    {
+      "name": "Soft Mask",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/requeue/last_complete_7965770.pt"
+    },
+    {
+      "name": "Random_route",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/checkpoints/26/06/17-18:19:53-meyad/best_epoch50.pt"
+    },
+    {
+      "name": "Gumbel_penulti",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/checkpoints/26/06/17-03:38:09-izemh/best_epoch50.pt"
+    },
+    {
+      "name": "aux_route_penultimate",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/checkpoints/26/06/18-11:55:10-ybxvn/best_epoch45.pt"
+    }
+  ],
+  "prune_frequency_checkpoint_order": [
+    {
+      "name": "Soft Mask",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/requeue/last_complete_7965770.pt"
+    },
+    {
+      "name": "Gumbel_penulti",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/checkpoints/26/06/17-03:38:09-izemh/best_epoch50.pt"
+    },
+    {
+      "name": "aux_route_penultimate",
+      "path": "/data/coml-oxmedis/sann8016/prune-study/checkpoints/26/06/18-11:55:10-ybxvn/best_epoch45.pt"
+    }
+  ],
+  "plots": [
+    {
+      "plot_index": 0,
+      "scan_indices": [
+        47,
+        10,
+        43
+      ]
+    },
+    {
+      "plot_index": 1,
+      "scan_indices": [
+        0,
+        44,
+        39
+      ]
+    },
+    {
+      "plot_index": 2,
+      "scan_indices": [
+        38,
+        29,
+        37
+      ]
+    },
+    {
+      "plot_index": 3,
+      "scan_indices": [
+        11,
+        25,
+        14
+      ]
+    }
+  ],
+  "selected_samples": [
+    {
+      "rank": 0,
+      "scan_index": 47,
+      "meta": {
+        "filename": "160_N_2.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.1880824503206809,
+      "miou_by_model": {
+        "Dense": 0.8561549782752991,
+        "Soft Mask": 0.3733731806278229,
+        "Random_route": 0.8416467905044556,
+        "Gumbel_penulti": 0.8209114074707031,
+        "aux_route_penultimate": 0.8516789674758911
+      }
+    },
+    {
+      "rank": 1,
+      "scan_index": 10,
+      "meta": {
+        "filename": "111_G_2.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.18751066912623354,
+      "miou_by_model": {
+        "Dense": 0.7302060723304749,
+        "Soft Mask": 0.24848580360412598,
+        "Random_route": 0.7215912342071533,
+        "Gumbel_penulti": 0.6776529550552368,
+        "aux_route_penultimate": 0.7295427918434143
+      }
+    },
+    {
+      "rank": 2,
+      "scan_index": 43,
+      "meta": {
+        "filename": "156_N_3.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.2187356076354879,
+      "miou_by_model": {
+        "Dense": 0.8167689442634583,
+        "Soft Mask": 0.2652445137500763,
+        "Random_route": 0.8142063021659851,
+        "Gumbel_penulti": 0.7980605959892273,
+        "aux_route_penultimate": 0.818113386631012
+      }
+    },
+    {
+      "rank": 3,
+      "scan_index": 0,
+      "meta": {
+        "filename": "101_A_2.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.18832563786444573,
+      "miou_by_model": {
+        "Dense": 0.8513904809951782,
+        "Soft Mask": 0.37213951349258423,
+        "Random_route": 0.8441686034202576,
+        "Gumbel_penulti": 0.8191192150115967,
+        "aux_route_penultimate": 0.8531935811042786
+      }
+    },
+    {
+      "rank": 4,
+      "scan_index": 44,
+      "meta": {
+        "filename": "158_D_2.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.16932329669614385,
+      "miou_by_model": {
+        "Dense": 0.8550567626953125,
+        "Soft Mask": 0.43176382780075073,
+        "Random_route": 0.8633608222007751,
+        "Gumbel_penulti": 0.8427481651306152,
+        "aux_route_penultimate": 0.8577786684036255
+      }
+    },
+    {
+      "rank": 5,
+      "scan_index": 39,
+      "meta": {
+        "filename": "151_N_2.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.17952995933194232,
+      "miou_by_model": {
+        "Dense": 0.887222945690155,
+        "Soft Mask": 0.43648797273635864,
+        "Random_route": 0.8878793120384216,
+        "Gumbel_penulti": 0.8716471791267395,
+        "aux_route_penultimate": 0.8930717706680298
+      }
+    },
+    {
+      "rank": 6,
+      "scan_index": 38,
+      "meta": {
+        "filename": "151_D_1.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.19622296437487327,
+      "miou_by_model": {
+        "Dense": 0.8305577635765076,
+        "Soft Mask": 0.3306416869163513,
+        "Random_route": 0.8156306743621826,
+        "Gumbel_penulti": 0.8041992783546448,
+        "aux_route_penultimate": 0.8317692279815674
+      }
+    },
+    {
+      "rank": 7,
+      "scan_index": 29,
+      "meta": {
+        "filename": "143_G_3.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.12531596289688723,
+      "miou_by_model": {
+        "Dense": 0.8802971839904785,
+        "Soft Mask": 0.5525714159011841,
+        "Random_route": 0.8700088858604431,
+        "Gumbel_penulti": 0.8462464213371277,
+        "aux_route_penultimate": 0.8619387745857239
+      }
+    },
+    {
+      "rank": 8,
+      "scan_index": 37,
+      "meta": {
+        "filename": "150_G_1.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.16203603948943363,
+      "miou_by_model": {
+        "Dense": 0.8712764978408813,
+        "Soft Mask": 0.45578014850616455,
+        "Random_route": 0.8690258860588074,
+        "Gumbel_penulti": 0.8325222134590149,
+        "aux_route_penultimate": 0.8645788431167603
+      }
+    },
+    {
+      "rank": 9,
+      "scan_index": 11,
+      "meta": {
+        "filename": "112_G_2.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.20810399470516064,
+      "miou_by_model": {
+        "Dense": 0.9146832227706909,
+        "Soft Mask": 0.38849180936813354,
+        "Random_route": 0.9100733399391174,
+        "Gumbel_penulti": 0.8974384069442749,
+        "aux_route_penultimate": 0.9119706153869629
+      }
+    },
+    {
+      "rank": 10,
+      "scan_index": 25,
+      "meta": {
+        "filename": "135_G_1.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.17274198074851024,
+      "miou_by_model": {
+        "Dense": 0.632191002368927,
+        "Soft Mask": 0.1677013784646988,
+        "Random_route": 0.5671247243881226,
+        "Gumbel_penulti": 0.585729718208313,
+        "aux_route_penultimate": 0.6000182032585144
+      }
+    },
+    {
+      "rank": 11,
+      "scan_index": 14,
+      "meta": {
+        "filename": "119_G_3.png",
+        "original_size": [
+          1024,
+          1024
+        ]
+      },
+      "miou_std": 0.1976005448238131,
+      "miou_by_model": {
+        "Dense": 0.6914685368537903,
+        "Soft Mask": 0.20182031393051147,
+        "Random_route": 0.684050440788269,
+        "Gumbel_penulti": 0.6921692490577698,
+        "aux_route_penultimate": 0.7132095694541931
+      }
+    }
+  ]
+}

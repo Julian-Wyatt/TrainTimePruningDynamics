@@ -1,0 +1,11 @@
+defaults:
+  - jump1_r07
+  - _self_
+
+MODEL:
+  EOMT_PRUNE_REINJECT: "q_start"
+
+TRAIN:
+  # Distinct identity: without this the parent's EXPERIMENT_ID (qBC_vits_jump1_r07,
+  # the penultimate run) is inherited, so the row would collide / be skipped as a dup.
+  EXPERIMENT_ID: qBC_vits_jump1_r07_qstart

@@ -1,0 +1,21 @@
+defaults:
+  - ../../shared/base_1024_50_vits
+  - _self_
+
+MODEL:
+  USE_EOMT_PRUNING: true
+  EOMT_PRUNE_TRAIN_MODE: "random_route"
+  EOMT_PRUNE_EVAL_MODE: "hard"
+  EOMT_PRUNE_REINJECT: "penultimate"
+  EOMT_PRUNE_LOSS_WEIGHT: 4.0
+  # Reg4Pru: the MLP selector trains like soft_mask on the full token stream, while a
+  # train-only random route keeps 50% of tokens across a random block window.
+  EOMT_PRUNE_AUX_SCORER: false
+  EOMT_PRUNE_ROUTING_KEEP_RATE: 0.5
+  EOMT_PRUNE_RANDOM_WINDOW_BOUNDS: true
+  # Fallback fixed bounds (ignored when EOMT_PRUNE_RANDOM_WINDOW_BOUNDS=true):
+  EOMT_PRUNE_ROUTE_START_AFTER_BLOCK: 2
+  EOMT_PRUNE_ROUTE_END_AFTER_BLOCK: 9
+
+TRAIN:
+  EXPERIMENT_ID: qA_random_route

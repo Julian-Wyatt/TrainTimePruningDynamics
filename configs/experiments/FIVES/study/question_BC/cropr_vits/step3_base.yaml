@@ -1,0 +1,8 @@
+defaults:
+  - base
+  - _self_
+
+MODEL:
+  CROPR_SCHEDULE: "progressive_fraction"
+  CROPR_STATIC_PRUNING: false
+  CROPR_PRUNE_BLOCKS: [2, 5, 8]

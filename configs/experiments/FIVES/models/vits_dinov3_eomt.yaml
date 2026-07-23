@@ -1,0 +1,10 @@
+# The study's segmentation backbone. timm loads it as the Eva class: rotary position
+# embeddings (no absolute pos-embed), 1 cls + 4 register tokens.
+MODEL:
+  BACKBONE: "vit_small_patch16_dinov3.lvd1689m"
+  PATCH_SIZE: 16
+  EMA_DECAY: 0.999
+  NUM_QUERIES: 1
+  NUM_QUERY_BLOCKS: 3
+  MASKED_ATTN: true
+  ATTN_MASK_ANNEALING_ENABLED: false

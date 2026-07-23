@@ -1,0 +1,9 @@
+defaults:
+  - base
+  - _self_
+
+MODEL:
+  CROPR_SCHEDULE: "early_reinject"
+  CROPR_STATIC_PRUNING: true
+  CROPR_KEEP_FRACTION: 0.20
+  CROPR_STATIC_PRUNE_MULT: 1.0

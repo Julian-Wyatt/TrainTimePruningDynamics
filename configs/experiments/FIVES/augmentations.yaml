@@ -1,0 +1,17 @@
+# Consumed by FIVESTransform (src/data/medical.py). RANDOM_SCALE / RANDOM_CROP /
+# HORIZONTAL_FLIP belong to SegmentationTransform and are not read here.
+AUGMENTATIONS:
+  # Brightness + contrast: camera exposure varies across fundus scanners
+  COLOR_JITTER: 0.3
+  # Tighter than brightness/contrast: pathology colour sets vessel-background
+  # contrast even for binary segmentation.
+  SATURATION_JITTER: 0.2
+  HUE_JITTER: 0.05
+  GAUSS_NOISE_STD_RANGE: [0.01, 0.05]
+  # 1.0 = plain Resize; <1.0 = RandomResizedCrop(scale=(SCALE_CROP_MIN, 1.0)) at a
+  # fixed 1:1 ratio. 0.85 gave the best thin-vessel recall in the augmentation sweep.
+  SCALE_CROP_MIN: 0.85
+  # Elastic deformation probability; 0.0 = disabled.
+  ELASTIC_P: 0.0
+  # Zeros 4-8 image patches while keeping the mask intact; 0.0 = disabled.
+  COARSE_DROPOUT_P: 0.0

@@ -1,0 +1,16 @@
+defaults:
+  - ../../shared/base_1024_50_vits
+  - _self_
+
+MODEL:
+  USE_EOMT_PRUNING: true
+  EOMT_PRUNE_TRAIN_MODE: "soft_mask"
+  EOMT_PRUNE_EVAL_MODE: "hard"
+  EOMT_PRUNE_REINJECT: "penultimate"
+  # The Q A soft/masked arm must actually keep the full token set during
+  # training. CROPR direct-BCE scoring uses hard physical routing, so opt out here.
+  EOMT_PRUNE_AUX_SCORER: false
+  EOMT_PRUNE_LOSS_WEIGHT: 4.0
+
+TRAIN:
+  EXPERIMENT_ID: qA_soft_mask_vits

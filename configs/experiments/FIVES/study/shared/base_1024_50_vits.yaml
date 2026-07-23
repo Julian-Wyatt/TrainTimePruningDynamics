@@ -1,0 +1,27 @@
+defaults:
+  - ../../dataset
+  - ../../augmentations
+  - ../../schedules/50ep_poly
+  - ../../models/vits_dinov3_eomt
+  - _self_
+
+# ViT-S counterpart to base_1024_50 — identical study knobs, smaller backbone. Used
+# by the Question A core arms; its narrower embed dim also shrinks the conv head.
+MODEL:
+  EOMT_PRUNE_LAYERS: [2, 5, 8]
+  EOMT_KEEP_RATES: [0.7, 0.7, 0.7]
+  EOMT_PRUNE_RAMP_EPOCHS: 10
+  PRUNE_ROUND_MULTIPLE: 8
+  # Study default: CROPR scorer + train-only direct-BCE supervision.
+  # Override ++MODEL.EOMT_PRUNE_AUX_SCORER=false for the MLP-selector + budget-MSE arm.
+  EOMT_PRUNE_AUX_SCORER: true
+  # Matches the budget-MSE arms' EOMT_PRUNE_LOSS_WEIGHT; both are mean'd over prune
+  # stages, so the scorer's share is invariant to a schedule's stage count.
+  EOMT_PRUNE_AUX_LOSS_WEIGHT: 4.0
+  # The raw score is the foreground logit, so keep-highest == keep-foreground.
+
+TRAIN:
+  BATCH_SIZE: 2
+  # Validate/test at the bs=8 single-GPU operating point, so logged val throughput
+  # matches the throughput sweep. <=0 would fall back to int(1.5 * BATCH_SIZE).
+  VAL_BATCH_SIZE: 8

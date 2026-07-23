@@ -1,0 +1,6 @@
+defaults:
+  - step3_base
+  - _self_
+
+MODEL:
+  CROPR_KEEP_FRACTION: 0.60

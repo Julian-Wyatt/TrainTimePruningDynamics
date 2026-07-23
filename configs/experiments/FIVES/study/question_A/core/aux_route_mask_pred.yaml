@@ -1,0 +1,11 @@
+# Reinjection variant of aux_route_penultimate: only EOMT_PRUNE_REINJECT changes,
+# isolating the reinsertion point for the aux-scorer arm.
+defaults:
+  - aux_route_penultimate
+  - _self_
+
+MODEL:
+  EOMT_PRUNE_REINJECT: "mask_pred"
+
+TRAIN:
+  EXPERIMENT_ID: qA_aux_route_maskpred

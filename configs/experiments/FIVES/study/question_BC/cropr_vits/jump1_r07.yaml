@@ -1,0 +1,9 @@
+defaults:
+  - jump1_r02
+  - _self_
+
+MODEL:
+  CROPR_KEEP_FRACTION: 0.70
+
+TRAIN:
+  EXPERIMENT_ID: qBC_vits_jump1_r07

@@ -1,0 +1,16 @@
+defaults:
+  - ../../shared/base_1024_50_vits
+  - _self_
+
+MODEL:
+  USE_EOMT_PRUNING: true
+  EOMT_PRUNE_TRAIN_MODE: "gumbel_route"
+  EOMT_PRUNE_EVAL_MODE: "hard"
+  EOMT_PRUNE_REINJECT: "q_start"
+  EOMT_PRUNE_LOSS_WEIGHT: 4.0
+  # gumbel_route selects with the MLP predictor, so the CROPR scorer must be off —
+  # otherwise selection routes via the scorer and the Gumbel predictor never runs.
+  EOMT_PRUNE_AUX_SCORER: false
+
+TRAIN:
+  EXPERIMENT_ID: qA_gumbel_qstart

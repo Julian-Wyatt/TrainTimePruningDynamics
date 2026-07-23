@@ -1,0 +1,5 @@
+# Alias of the Question A dense arm (same ViT-S EoMT, no pruning). It inherits that
+# EXPERIMENT_ID, so the registry treats both entry points as one run.
+defaults:
+  - ../../question_A/core/dense
+  - _self_

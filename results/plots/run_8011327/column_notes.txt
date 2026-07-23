@@ -1,0 +1,22 @@
+style_version: v4_input-left_soft-alpha-0.60_prune-cool-overlay-alpha-0.90-transparent-kept
+
+seg_soft columns:
+  1. input image
+  2. ground truth
+  3. Dense
+  4. Soft Mask
+  5. Random_route
+  6. Gumbel_penulti
+  7. aux_route_penultimate
+
+prune_frequency columns:
+  1. input image
+  2. Soft Mask
+  3. Gumbel_penulti
+  4. aux_route_penultimate
+
+notes:
+  - seg_soft model columns follow the --checkpoint order.
+  - prune_frequency defaults to Soft Mask, Gumbel_penulti, aux_route_penultimate.
+  - prune_frequency colours show survived fraction; never-pruned tokens are transparent by default.
+  - If a custom prune-frequency checkpoint exposes no selection maps, its column is omitted.

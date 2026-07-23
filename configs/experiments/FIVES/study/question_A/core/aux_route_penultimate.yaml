@@ -1,0 +1,21 @@
+defaults:
+  - ../../shared/base_1024_50_vits
+  - _self_
+
+MODEL:
+  USE_EOMT_PRUNING: true
+  EOMT_PRUNE_TRAIN_MODE: "hard_route"
+  EOMT_PRUNE_EVAL_MODE: "hard"
+  EOMT_PRUNE_REINJECT: "penultimate"
+  # This arm's defining feature: the CROPR cross-attention scorer plus a train-only
+  # auxiliary direct-BCE scorer per prune stage, in place of the budget-MSE selector.
+  EOMT_PRUNE_AUX_SCORER: true
+  # Matches the budget-MSE arms' EOMT_PRUNE_LOSS_WEIGHT; both losses are mean'd over
+  # prune stages, so the scorer's share is invariant to the stage count.
+  EOMT_PRUNE_AUX_LOSS_WEIGHT: 4.0
+
+TRAIN:
+  # Set explicitly so the Question B/C `cropr_vits/step3_r07` alias inherits it
+  # (same [2,5,8]@0.70 hard-route + aux) and the registry treats them as one run.
+  EXPERIMENT_ID: qA_aux_route_penult
+  RESULTS_GROUP: qA_core

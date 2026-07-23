@@ -1,0 +1,12 @@
+defaults:
+  - ../core/gumbel_route_penultimate
+  - _self_
+
+MODEL:
+  EOMT_KEEP_RATES: [0.7, 0.7, 0.7]
+
+TRAIN:
+  # Identical to question_A/core/gumbel_route_penultimate, so it reuses that id and
+  # the curve's 0.7 point lives in qA_core.csv (collate keep_sweep with --all).
+  EXPERIMENT_ID: qA_gumbel_penult
+  RESULTS_GROUP: qA_core

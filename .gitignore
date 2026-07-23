@@ -1,0 +1,70 @@
+# Agent / editor state
+.claude/
+.agents/
+
+# Editors and local environment
+.env
+.idea/
+.vscode/
+*.code-workspace
+pyrightconfig.json
+.pyre_configuration
+
+# Python caches and tooling
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# OS files
+.DS_Store
+
+# Scratch / local-only folders and notes
+tmp/
+del/
+var/
+testing/
+PUBLIC_RELEASE.md
+scratch_config_audit.md
+
+# Local data and generated visualisations
+datasets/
+dataset_utils/vis/
+visuals/
+tests/eomt_query_visuals/
+tests/tests/
+*.png
+!assets/*.png
+profile_results/
+
+# Experiment tracking and profiler outputs
+/wandb/
+tblogs/
+lightning_logs/
+profiler_logs/
+slurm_outputs/
+outputs/
+saves/
+checkpoints/
+
+# Model checkpoints / large weight artifacts
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+
+# Results: the published tables are tracked; scratch/backups are not.
+results/*
+!results/graph_data/
+!results/qA_core.csv
+!results/qA_keep_sweep.csv
+!results/qBC_cropr_vits.csv
+!results/throughput.csv
+!results/plots/
+!results/plots/**
+*.bak
+*.lock
+
+# configs/ is tracked (reproducibility record)
+*.yaml
+!configs/**/*.yaml

@@ -1,0 +1,12 @@
+defaults:
+  - ../core/soft_mask
+  - _self_
+
+MODEL:
+  EOMT_KEEP_RATES: [0.5, 0.5, 0.5]
+
+TRAIN:
+  # Distinct per-rate id so the keep-rate axis isn't collapsed in the registry
+  # (all leaves would otherwise inherit qA_soft_mask_vits from the core parent).
+  EXPERIMENT_ID: qA_soft_mask_vits_r05
+  RESULTS_GROUP: qA_keep_sweep

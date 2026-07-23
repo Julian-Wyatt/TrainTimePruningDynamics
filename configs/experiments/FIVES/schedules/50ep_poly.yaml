@@ -1,0 +1,30 @@
+TRAIN:
+  TASK: "segmentation"
+  TRAINER_TYPE: "auto"
+  LOSS_TYPE: "mask2former"
+  M2F_CLASS_COEF: 0.0
+  BATCH_SIZE: 2
+  EFFECTIVE_BATCH_SIZE: 8
+  LR: 0.0001
+  WEIGHT_DECAY: 0.05
+  EPOCHS: 50
+  NUM_WORKERS: 4
+  OPTIMIZER: "adamw"
+  ADAM_BETAS: [0.9, 0.999]
+  LLRD: 0.8
+  # Don't pin the last N backbone blocks at full LR — let them decay below the
+  # head LR so the pretrained DINOv3 top blocks aren't trained as hard on FIVES.
+  LLRD_FULL_LR_LAST_N_BLOCKS: false
+  SPLIT_WARMUP: true
+  WARMUP_STEPS: [200, 400]
+  SCHEDULE_NAME: "polynomial"
+  WARMUP_RATIO: 0.05
+  BEST_METRIC: "mIoU"
+  VAL_EVERY_N_EPOCHS: 5
+  CKPT_EVERY_N_EPOCHS: 5
+  LOG_BOUNDARY_IOU: true
+  LOG_CLDICE: true
+  LOG_THIN_VESSEL_DICE: true
+  BOUNDARY_WIDTH: 5
+  THROUGHPUT_WARMUP_BATCHES: 20
+  THROUGHPUT_MEASURE_BATCHES: 100

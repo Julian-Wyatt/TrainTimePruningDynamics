@@ -1,0 +1,6 @@
+defaults:
+  - jump1_r07
+  - _self_
+
+MODEL:
+  EOMT_PRUNE_REINJECT: "penultimate"
