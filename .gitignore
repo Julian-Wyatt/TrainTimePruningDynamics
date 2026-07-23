@@ -60,6 +60,8 @@ results/*
 !results/qA_keep_sweep.csv
 !results/qBC_cropr_vits.csv
 !results/throughput.csv
+!results/Fig1.png
+!results/Fig3.png
 !results/plots/
 !results/plots/**
 *.bak

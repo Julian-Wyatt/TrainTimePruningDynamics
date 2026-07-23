@@ -25,9 +25,9 @@ to additional pruning overhead.
 Figure 1 shows the learned pruning policy, while Figure 3 shows qualitative vessel
 segmentation results across pruning schedules.
 
-![Figure 1: learned pruning policy](results/plots/run_8011327/seg_soft_qblock0_plot03_rows3.png)
+![Figure 1: learned pruning policy](results/Fig1.png)
 
-![Figure 3: qualitative pruning-frequency comparison](results/plots/prune_frequency_turbo_plot03_rows3.png)
+![Figure 3: qualitative pruning-frequency comparison](results/Fig3.png)
 
 The tables behind the paper's numbers are in [`results/`](results/): `qA_core.csv`
 (Table 1), `qBC_cropr_vits.csv` (Table 3), `qA_keep_sweep.csv` (Figure 2) and
