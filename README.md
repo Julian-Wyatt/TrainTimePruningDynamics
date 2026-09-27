@@ -131,10 +131,15 @@ Computing (ARC) facility ([doi:10.5281/zenodo.22558](https://doi.org/10.5281/zen
 <!-- TODO: update pages/DOI once the proceedings are published. -->
 
 ```bibtex
-@InProceedings{Wyatt_2026_EMA4MICCAI,
-    author    = {Wyatt, Julian and Voiculescu, Irina},
-    title     = {How Do Train-Time Pruning Dynamics and Pruning Schedules Affect Retinal Vessel Segmentation?},
-    booktitle = {Efficient Medical AI (EMA4MICCAI), MICCAI 2026 Workshops},
-    year      = {2026}
+@InProceedings{WyaJul_How_MICCAISAT2026,
+        author = { Wyatt, Julian AND Voiculescu, Irina},
+        title = { { How Do Train-Time Pruning Dynamics and Pruning Schedules Affect Retinal Vessel Segmentation? } },
+        booktitle = {Medical Image Computing and Computer Assisted Intervention -- MICCAI 2026 Workshops and Challenges},
+        year = {2026},
+        publisher = {Springer Nature Switzerland},
+        volume = {LNCS 17265},
+        month = {pending},
+        page = {pending}
 }
+
 ```
